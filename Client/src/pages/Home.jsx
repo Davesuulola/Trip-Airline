@@ -1,6 +1,6 @@
 // import Logo from "../assets/Logo.png";
 // import Button from "./Button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Trips from "../components/Trips"
 import Book from "../components/Book"
 import Plane from "../assets/images/Plane.jpg"
@@ -11,7 +11,8 @@ import kano from "../assets/images/kano.jpg"
 import japan from "../assets/images/japan.jpg"
 import lagos from "../assets/images/lagos.jpg"
 import airport from "../assets/images/airport.jpg"
-import pexels from "../assets/images/pexels.jpg"
+import feedback from "../assets/images/feedback.jpg"
+
 import { Link } from "react-router-dom";
 
 import "../App.css"
@@ -21,7 +22,13 @@ import Footer from "../components/Footer"
 
 const Home=()=>{
 
-  
+  const [ message, setMessage] = useState('');
+  useEffect(() =>{
+    fetch('/')
+    .then((res) => res.text())
+    .then((data) => setMessage(data))
+    .catch((err) => console.log(err));
+  }, [])
 
     return(<>
     
@@ -46,7 +53,7 @@ const Home=()=>{
     <div className="w-full text-center">
         
 <h1 className="md:text-3xl sm:text-2xl font-normal text-xl ">Start planning your next trip</h1>   
-<p className="py-3 font-light">Thinking of going somwhere soon? Here's some ideas to get you started</p>
+<p className="py-3 font-light">Thinking of going somwhere soon? Here's some ideas to get you started </p>
     </div>
     <div className="flex flex-wrap -mx-1 lg:-mx-4">
 
@@ -62,7 +69,7 @@ const Home=()=>{
     
 </div>
 
-<div className="bg-no-repeat flex items-center justify-center md:justify-end py-14 bg-cover bg-center bg-fixed sm:bg-[url('../assets/images/take.jpg')] h-96 w-full" style={{backgroundImage : `url(${pexels})`}}> 
+<div className="bg-no-repeat flex items-center justify-center md:justify-end py-14 bg-cover bg-center bg-fixed sm:bg-[url('../assets/images/take.jpg')] h-96 w-full" style={{backgroundImage : `url(${feedback})`}}> 
 <div className="w-full ml-10 justify-center items-center  md:w-1/2">
 <h1 className="text-white text-2xl font-bold sm:text-4xl ">
     Never miss an offer
@@ -73,14 +80,14 @@ const Home=()=>{
 
 <div class="mb-6  gap-3">
 
-<input type="text" id="password" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 md:w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name" required/>
+<input type="text" id="password" class="shadow-sm bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 md:w-2/3  sm:w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Name" required/>
 
-<input type="text"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 md:w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="email" required/>
+<input type="text"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6  sm:w-1/2  md:w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="email" required/>
 
-<input type="text"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 md:w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Phone number" required/>
+<input type="text"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 sm:w-1/2  md:w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Phone number" required/>
 
 </div>
-<button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Subscribe</button>
+<button type="submit" class="text-white sm:w-1/4 w-5/6 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Subscribe</button>
 </form>
 </div>
 
@@ -91,7 +98,7 @@ const Home=()=>{
 <h1 className="md:text-4xl sm:text-3xl text-2xl ">We Want Your Feedback</h1>   
 <p className="py-3 font-light">Our goal is to provide top notch service at every point of your Trip Air experience. Therefore, we are always happy to hear your views so we can continue to improve our offerings and surpass our passengers’ expectations. To share your comments & suggestions with us, please fill out and submit our online feedback form.</p>
 
-<button  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><span><ion-icon name="megaphone"></ion-icon></span> Feedback</button>
+{/* <button  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><span><ion-icon name="megaphone"></ion-icon></span> Feedback</button> */}
 </div>
 
 

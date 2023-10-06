@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import book from "../assets/images/book.jpg"
+import book from "../assets/images/take.jpg"
 import Book from "../components/Book"
 import "../App.css"
 const  Booking =()=>{

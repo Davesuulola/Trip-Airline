@@ -28,7 +28,7 @@ const Login=()=>{
 
 <input type="text" id="email" class="shadow-sm mt-5 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter your Email" required/>
 
-<input type="text"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter your password" required/>
+<input type="password"  id="password" class="shadow-sm mt-5  bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Enter your password" required/>
 <p className="mt-2 ml-1">Forgotten password?</p>
 <button type="submit" class="text-white bg-blue-500 hover:bg-blue-700 transition-all ease-in mt-3 duration-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium w-full rounded-lg text-sm px-5 py-2.5 text-center">Log In</button>
 
